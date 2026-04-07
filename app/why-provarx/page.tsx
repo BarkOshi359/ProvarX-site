@@ -3,8 +3,8 @@ function HighlightBox({ points }: { points: string[] }) {
     <div className="border-l-4 border-[#4A90D9] bg-white pl-6 py-5 pr-6 rounded-r-lg">
       <ul className="flex flex-col gap-3">
         {points.map((point) => (
-          <li key={point} className="flex items-start gap-3 text-sm text-[#1B2D4F]">
-            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#4A90D9] flex-shrink-0" />
+          <li key={point} className="flex items-start gap-3 text-base text-[#1B2D4F]" style={{ lineHeight: "1.75" }}>
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#4A90D9] flex-shrink-0" />
             {point}
           </li>
         ))}
@@ -16,7 +16,7 @@ function HighlightBox({ points }: { points: string[] }) {
 export default function WhyProvarxPage() {
   return (
     <>
-      {/* Page Header */}
+      {/* Page Hero */}
       <section className="bg-[#1B2D4F] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
@@ -25,7 +25,7 @@ export default function WhyProvarxPage() {
           <h1 className="text-5xl font-bold mb-6">
             Not the first option. The right one.
           </h1>
-          <p className="text-white/70 text-xl font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/70 text-xl font-light max-w-2xl mx-auto" style={{ lineHeight: "1.75" }}>
             There are other ways to handle compliance. Here is why they fall short — and what
             Provarx does differently.
           </p>
@@ -33,15 +33,13 @@ export default function WhyProvarxPage() {
       </section>
 
       {/* Section 1 — vs Paper and Spreadsheets */}
-      <section className="bg-white py-24 px-6">
+      <section className="bg-white py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
-            Comparison 01
-          </p>
-          <h2 className="text-3xl font-bold text-[#1B2D4F] mb-8">
+          <hr className="border-t-2 border-[#4A90D9] mb-8 w-12" />
+          <h2 className="text-[1.75rem] font-bold text-[#1B2D4F] mb-8">
             vs. Paper and Spreadsheets
           </h2>
-          <div className="flex flex-col gap-6 text-gray-600 leading-relaxed mb-10">
+          <div className="flex flex-col gap-6 text-gray-600 mb-10" style={{ fontSize: "16px", lineHeight: "1.75" }}>
             <p>
               Paper logs and spreadsheets are not compliance systems — they are compliance
               liabilities. A handwritten logbook has no timestamp verification. A spreadsheet has no
@@ -75,15 +73,13 @@ export default function WhyProvarxPage() {
       </section>
 
       {/* Section 2 — vs Enterprise Platforms */}
-      <section className="bg-[#F8FAFC] py-24 px-6">
+      <section className="bg-[#F8FAFC] py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
-            Comparison 02
-          </p>
-          <h2 className="text-3xl font-bold text-[#1B2D4F] mb-8">
+          <hr className="border-t-2 border-[#4A90D9] mb-8 w-12" />
+          <h2 className="text-[1.75rem] font-bold text-[#1B2D4F] mb-8">
             vs. Enterprise Platforms
           </h2>
-          <div className="flex flex-col gap-6 text-gray-600 leading-relaxed mb-10">
+          <div className="flex flex-col gap-6 text-gray-600 mb-10" style={{ fontSize: "16px", lineHeight: "1.75" }}>
             <p>
               Enterprise food safety platforms exist — and they are built for enterprise companies.
               Six-figure implementation fees. Twelve-month onboarding timelines. Dedicated IT
@@ -115,15 +111,13 @@ export default function WhyProvarxPage() {
       </section>
 
       {/* Section 3 — The Six Sigma Difference */}
-      <section className="bg-white py-24 px-6">
+      <section className="bg-white py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
-            The Difference
-          </p>
-          <h2 className="text-3xl font-bold text-[#1B2D4F] mb-8">
+          <hr className="border-t-2 border-[#4A90D9] mb-8 w-12" />
+          <h2 className="text-[1.75rem] font-bold text-[#1B2D4F] mb-8">
             The Six Sigma Difference
           </h2>
-          <div className="flex flex-col gap-6 text-gray-600 leading-relaxed mb-10">
+          <div className="flex flex-col gap-6 text-gray-600 mb-10" style={{ fontSize: "16px", lineHeight: "1.75" }}>
             <p>
               Most compliance platforms are record-keeping systems. They log what happened. They
               do not tell you what is about to happen. That distinction matters when the difference
@@ -161,7 +155,7 @@ export default function WhyProvarxPage() {
           <h2 className="text-3xl font-bold mb-6">
             Ready to see the difference for your facility?
           </h2>
-          <p className="text-white/70 mb-8 leading-relaxed">
+          <p className="text-white/70 mb-8" style={{ lineHeight: "1.75" }}>
             A direct conversation about your compliance challenges — no sales deck, no pressure.
           </p>
           <a

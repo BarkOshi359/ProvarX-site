@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+const bodyStyle = { fontSize: "16px", lineHeight: "1.75", color: "#374151" };
+const labelClass = "text-center text-[#4A90D9] text-xs uppercase font-semibold mb-4" as const;
+
 function ShieldCheckIcon() {
   return (
     <svg className="w-10 h-10 text-[#4A90D9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,10 +65,10 @@ export default function Home() {
       {/* SECTION 1 — HERO */}
       <section className="bg-[#1B2D4F] text-white py-28 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
             Every Record. Proven. Permanent.
           </h1>
-          <p className="text-xl md:text-2xl font-light text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl font-light text-white/75 max-w-2xl mx-auto mb-10" style={{ lineHeight: "1.75" }}>
             Provarx gives food and beverage manufacturers tamper-proof compliance records and
             real-time process intelligence — so an FDA audit is never a surprise.
           </p>
@@ -84,10 +87,10 @@ export default function Home() {
       {/* SECTION 2 — PROBLEM */}
       <section className="bg-white py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
+          <p className={labelClass} style={{ letterSpacing: "0.1em" }}>
             The Reality of Compliance Today
           </p>
-          <h2 className="text-4xl font-bold text-[#1B2D4F] text-center mb-14">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-14">
             Your current system has three problems.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -105,12 +108,16 @@ export default function Home() {
                 body: "Logging CCP checks tells you whether you passed today. It doesn't tell you that Line 3's cook temperature has been drifting for six shifts and is two deviations from a violation. That's the data you actually need.",
               },
             ].map((card) => (
-              <div key={card.title} className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <div className="h-1.5 bg-[#1B2D4F]" />
-                <div className="p-8">
-                  <h3 className="text-lg font-bold text-[#1B2D4F] mb-4">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{card.body}</p>
-                </div>
+              <div
+                key={card.title}
+                className="bg-white border border-[#E5E7EB] rounded-lg p-8"
+                style={{
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                  borderTop: "4px solid #4A90D9",
+                }}
+              >
+                <h3 className="text-lg font-bold text-[#1B2D4F] mb-4">{card.title}</h3>
+                <p style={bodyStyle}>{card.body}</p>
               </div>
             ))}
           </div>
@@ -120,13 +127,13 @@ export default function Home() {
       {/* SECTION 3 — SOLUTION */}
       <section className="bg-[#F8FAFC] py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
+          <p className={labelClass} style={{ letterSpacing: "0.1em" }}>
             How Provarx Works
           </p>
-          <h2 className="text-4xl font-bold text-[#1B2D4F] text-center mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-4">
             One platform. Complete protection.
           </h2>
-          <p className="text-center text-gray-500 max-w-2xl mx-auto mb-16 leading-relaxed">
+          <p className="text-center max-w-2xl mx-auto mb-16" style={bodyStyle}>
             Provarx combines tamper-proof compliance records with Six Sigma process intelligence —
             purpose-built for mid-market food and beverage manufacturers.
           </p>
@@ -149,9 +156,14 @@ export default function Home() {
               },
             ].map((feature) => (
               <div key={feature.title} className="flex flex-col gap-5">
-                <div>{feature.icon}</div>
+                <div
+                  className="flex items-center justify-center w-16 h-16 rounded-full"
+                  style={{ backgroundColor: "#EFF6FF", padding: "12px" }}
+                >
+                  {feature.icon}
+                </div>
                 <h3 className="text-xl font-bold text-[#1B2D4F]">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.body}</p>
+                <p style={bodyStyle}>{feature.body}</p>
               </div>
             ))}
           </div>
@@ -161,10 +173,10 @@ export default function Home() {
       {/* SECTION 4 — HOW IT WORKS */}
       <section className="bg-white py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-4">
+          <p className={labelClass} style={{ letterSpacing: "0.1em" }}>
             Getting Started
           </p>
-          <h2 className="text-4xl font-bold text-[#1B2D4F] text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-16">
             Up and running in days. Not months.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -188,7 +200,7 @@ export default function Home() {
               <div key={step.step} className="flex flex-col gap-4">
                 <div className="text-7xl font-light text-[#4A90D9] leading-none">{step.step}</div>
                 <h3 className="text-xl font-bold text-[#1B2D4F]">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.body}</p>
+                <p style={bodyStyle}>{step.body}</p>
               </div>
             ))}
           </div>
@@ -198,10 +210,10 @@ export default function Home() {
       {/* SECTION 5 — TRUST SIGNALS */}
       <section className="bg-[#F8FAFC] py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#1B2D4F] text-center mb-14">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-14">
             Built on what regulators actually require.
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               {
                 icon: <CheckBadgeIcon />,
@@ -227,17 +239,20 @@ export default function Home() {
               <div key={signal.title} className="flex flex-col gap-4">
                 <div>{signal.icon}</div>
                 <h3 className="font-bold text-[#1B2D4F] text-base">{signal.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{signal.body}</p>
+                <p style={bodyStyle}>{signal.body}</p>
               </div>
             ))}
           </div>
 
           {/* FDA Quote Block */}
-          <div className="border border-gray-300 rounded-lg p-10 max-w-3xl mx-auto text-center">
-            <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-6">
+          <div
+            className="bg-white border border-[#E5E7EB] rounded-lg p-6 max-w-3xl mx-auto text-center"
+            style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
+          >
+            <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-5" style={{ letterSpacing: "0.1em" }}>
               Directly from FSMA Rule 204:
             </p>
-            <blockquote className="text-[#1B2D4F] italic text-base leading-relaxed mb-5">
+            <blockquote className="text-[#1B2D4F] italic mb-4" style={{ fontSize: "16px", lineHeight: "1.75" }}>
               &ldquo;Persons must provide records to FDA within 24 hours of a request during an outbreak
               investigation or within a reasonable time in other circumstances.&rdquo;
             </blockquote>
@@ -251,10 +266,10 @@ export default function Home() {
       {/* SECTION 6 — FINAL CTA */}
       <section className="bg-[#1B2D4F] text-white py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
             Ready to make your next FDA audit the easiest one you&apos;ve ever had?
           </h2>
-          <p className="text-white/70 text-lg leading-relaxed mb-10">
+          <p className="text-white/70 text-lg mb-10" style={{ lineHeight: "1.75" }}>
             We work directly with QA Managers, Food Safety Directors, and Plant Owners at mid-market
             food and beverage facilities. No enterprise contracts. No six-month implementations. Just
             a platform that works the way your facility works.

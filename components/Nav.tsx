@@ -13,6 +13,7 @@ export default function Nav() {
         <Link
           href="/"
           className="text-[#1B2D4F] font-bold text-xl tracking-widest uppercase"
+          onClick={() => setMenuOpen(false)}
         >
           PROVARX
         </Link>
@@ -53,9 +54,10 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#1B2D4F]"
+          className="md:hidden p-2 text-[#1B2D4F]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,44 +71,48 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4 flex flex-col gap-4">
-          <Link
-            href="/product"
-            className="text-[#1B2D4F] text-sm font-medium"
-            onClick={() => setMenuOpen(false)}
-          >
-            Product
-          </Link>
-          <Link
-            href="/why-provarx"
-            className="text-[#1B2D4F] text-sm font-medium"
-            onClick={() => setMenuOpen(false)}
-          >
-            Why Provarx
-          </Link>
-          <Link
-            href="/about"
-            className="text-[#1B2D4F] text-sm font-medium"
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="text-[#1B2D4F] text-sm font-medium"
-            onClick={() => setMenuOpen(false)}
-          >
-            Contact
-          </Link>
-          <Link
-            href="/contact"
-            className="bg-[#1B2D4F] text-white text-sm font-medium px-5 py-2 rounded-md text-center"
-            onClick={() => setMenuOpen(false)}
-          >
-            Talk to Us
-          </Link>
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div className="flex flex-col px-6 py-2">
+            <Link
+              href="/product"
+              className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Product
+            </Link>
+            <Link
+              href="/why-provarx"
+              className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Why Provarx
+            </Link>
+            <Link
+              href="/about"
+              className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <div className="py-4">
+              <Link
+                href="/contact"
+                className="block bg-[#1B2D4F] text-white text-base font-medium px-5 py-3 rounded-md text-center"
+                onClick={() => setMenuOpen(false)}
+              >
+                Talk to Us
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </header>
