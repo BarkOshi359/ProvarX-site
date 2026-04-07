@@ -93,7 +93,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-14">
             Your current system has three problems.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 title: "Your records can be altered.",
@@ -110,14 +110,18 @@ export default function Home() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-[#E5E7EB] rounded-lg p-8"
                 style={{
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E7EB",
                   borderTop: "4px solid #4A90D9",
+                  borderRadius: "12px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                  padding: "32px",
+                  marginBottom: "0",
                 }}
               >
-                <h3 className="text-lg font-bold text-[#1B2D4F] mb-4">{card.title}</h3>
-                <p style={bodyStyle}>{card.body}</p>
+                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1B2D4F", marginBottom: "16px" }}>{card.title}</h3>
+                <p style={{ fontSize: "16px", color: "#374151", lineHeight: "1.75" }}>{card.body}</p>
               </div>
             ))}
           </div>
@@ -213,7 +217,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-14">
             Built on what regulators actually require.
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               {
                 icon: <CheckBadgeIcon />,
@@ -246,17 +250,23 @@ export default function Home() {
 
           {/* FDA Quote Block */}
           <div
-            className="bg-white border border-[#E5E7EB] rounded-lg p-6 max-w-3xl mx-auto text-center"
-            style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
+            className="max-w-3xl mx-auto text-center"
+            style={{
+              background: "#FFFFFF",
+              border: "1px solid #E5E7EB",
+              borderRadius: "8px",
+              padding: "32px",
+              marginTop: "48px",
+            }}
           >
             <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-5" style={{ letterSpacing: "0.1em" }}>
               Directly from FSMA Rule 204:
             </p>
-            <blockquote className="text-[#1B2D4F] italic mb-4" style={{ fontSize: "16px", lineHeight: "1.75" }}>
+            <blockquote style={{ fontSize: "18px", fontStyle: "italic", color: "#1B2D4F", lineHeight: "1.75", marginBottom: "16px" }}>
               &ldquo;Persons must provide records to FDA within 24 hours of a request during an outbreak
               investigation or within a reasonable time in other circumstances.&rdquo;
             </blockquote>
-            <p className="text-gray-400 text-xs">
+            <p style={{ fontSize: "14px", color: "#6B7280" }}>
               — FDA Food Traceability Final Rule, 21 CFR Part 1, Subpart S
             </p>
           </div>
