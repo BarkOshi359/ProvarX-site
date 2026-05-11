@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function TechBlock({
   title,
   body,
@@ -68,12 +70,16 @@ export default function AboutPage() {
           </h2>
 
           <div className="flex flex-col md:flex-row gap-12 items-start">
-            {/* Placeholder portrait card */}
+            {/* Founder portrait */}
             <div className="flex-shrink-0 w-full md:w-48">
-              <div className="w-48 h-48 bg-white border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-2">
-                <div className="w-12 h-12 rounded-full bg-[#1B2D4F]/10" />
-                <span className="text-xs text-gray-400 uppercase tracking-wider">Clinton</span>
-                <span className="text-xs text-gray-400">Founder</span>
+              <div className="w-48 h-48 rounded-lg overflow-hidden border border-gray-200">
+                <Image
+                  src="/clinton.jpg"
+                  alt="Clinton, Founder of Provarx"
+                  width={192}
+                  height={192}
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 

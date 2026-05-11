@@ -28,10 +28,10 @@ export default function ContactPage() {
               Email
             </p>
             <a
-              href="mailto:clinton@provarx.com"
+              href="mailto:Clinton@Provarx.com"
               className="text-[#1B2D4F] text-2xl font-bold hover:text-[#4A90D9] transition-colors"
             >
-              clinton@provarx.com
+              Clinton@Provarx.com
             </a>
             <p className="text-gray-400 text-sm mt-2">
               You&apos;ll hear back from Clinton directly — not a support queue.
@@ -74,10 +74,10 @@ export default function ContactPage() {
           <p className="text-center text-gray-400 text-sm mt-8">
             Prefer email? Reach us directly at{" "}
             <a
-              href="mailto:clinton@provarx.com"
+              href="mailto:Clinton@Provarx.com"
               className="text-[#4A90D9] hover:underline"
             >
-              clinton@provarx.com
+              Clinton@Provarx.com
             </a>
           </p>
         </div>
