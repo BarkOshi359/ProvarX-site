@@ -36,10 +36,10 @@ export default function Footer() {
           <div>
             <p className="text-white/40 text-xs uppercase tracking-wider mb-3">Contact</p>
             <a
-              href="mailto:clinton@provarx.com"
+              href="mailto:Clinton@getprovarx.com"
               className="text-white/70 text-sm hover:text-white transition-colors"
             >
-              clinton@provarx.com
+              Clinton@getprovarx.com
             </a>
           </div>
         </div>
