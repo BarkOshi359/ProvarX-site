@@ -255,6 +255,12 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="text-center mt-10 text-sm text-[#64748B]">
+            No enterprise contracts. No six-month implementations.{' '}
+            <a href="/pricing" className="text-[#4A90D9] font-semibold hover:underline">
+              See exactly what&apos;s included →
+            </a>
+          </p>
         </div>
       </section>
 

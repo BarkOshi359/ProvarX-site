@@ -4,7 +4,8 @@ export interface BlogPost {
   metaTitle: string
   metaDescription: string
   publishedAt: string
-  category: 'Education' | 'Pillar' | 'SEO' | 'Trust'
+  category: 'FSMA 204' | 'Traceability' | 'Food Safety' | 'Audit Readiness'
+  updatedAt?: string
   readTime: number
   excerpt: string
   content: string
@@ -19,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'FSMA 204 Compliance Guide for Mid-Market Food Manufacturers | Provarx',
     metaDescription: 'FSMA Section 204 requires food manufacturers to maintain traceability records for high-risk foods. This guide explains the rule, which facilities are affected, and how to build a compliant records system.',
     publishedAt: '2026-04-01',
-    category: 'Pillar',
+    category: 'FSMA 204',
     readTime: 12,
     excerpt: 'FSMA Section 204 requires food manufacturers to maintain traceability records for high-risk foods. This guide explains what the rule requires, which facilities are affected, and how to build a compliant records system.',
     relatedSlugs: [
@@ -109,7 +110,8 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Records that can't be retrieved in 24 hours.</strong> The most operationally dangerous gap — and the most common. If producing a complete records package requires manual assembly across multiple systems, binders, and people, you almost certainly cannot meet the 24-hour window.</p>
 
 <h2>Next Steps</h2>
-<p>Understanding FSMA 204 is the first step. Knowing where your facility actually stands is the second — and the more urgent one. Use the Provarx FSMA 204 Gap Assessment to score your facility's readiness across all 10 critical compliance dimensions. It takes five minutes, and it will tell you exactly which gaps to close first.</p>
+<p>Understanding FSMA 204 is the first step. Knowing where your facility actually stands is the second — and the more urgent one. Use the <a href="/tools/fsma-gap-assessment">Provarx FSMA 204 Gap Assessment</a> to score your facility's readiness across all 10 critical compliance dimensions. It takes five minutes, and it will tell you exactly which gaps to close first.</p>
+<p>Once you know your gaps, run the <a href="/tools/recall-trace-simulator">Recall Trace Simulator</a> to walk through an FDA trace event and see whether your records can actually support 24-hour compliance.</p>
     `,
   },
   {
@@ -118,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'FSMA 204 Key Data Elements (KDEs) Explained | Provarx',
     metaDescription: 'FSMA 204 requires food manufacturers to capture Key Data Elements at each Critical Tracking Event. Here is exactly what FDA requires and how to capture it.',
     publishedAt: '2026-04-15',
-    category: 'Education',
+    category: 'Traceability',
     readTime: 6,
     excerpt: 'FSMA 204 requires food manufacturers to capture Key Data Elements (KDEs) at each Critical Tracking Event. Here\'s exactly what FDA requires and how to capture it.',
     relatedSlugs: [
@@ -182,6 +184,7 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Vague quantity records.</strong> "One truckload" or "full pallet" are not compliant quantity records. FDA requires a specific numeric quantity in a specific unit of measure. Net weight in pounds, or case count with a per-case weight, are acceptable. Vague descriptions are not.</p>
 <p><strong>Missing reference document numbers at shipping.</strong> Many facilities record customer names and shipping dates but omit the bill of lading or invoice number — the document that links your shipping record to the customer's receiving record. That reference document is required.</p>
 <p><strong>No documented link between input and output lots at production.</strong> This is the most common manufacturing-specific gap. If your production records don't explicitly capture which ingredient lots went into which finished product lot, your Transforming CTE is non-compliant — regardless of how detailed the rest of your records are.</p>
+<p>For a full breakdown of the FSMA 204 framework — CTEs, the 24-hour records requirement, and how to run your own recall drill — see <a href="/blog/fsma-204-compliance-guide-food-manufacturers">The Complete Guide to FSMA 204 Compliance</a>. To test whether your facility's records can actually support a 24-hour trace, use the <a href="/tools/fsma-gap-assessment">FSMA 204 Gap Assessment</a>.</p>
     `,
   },
   {
@@ -190,7 +193,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Blockchain Batch Records for Food Manufacturing | Tamper-Proof & FDA-Compliant | Provarx',
     metaDescription: 'Traditional batch records can be altered, backdated, or lost. Blockchain-verified records create an immutable chain of custody that stands up to any FDA audit. Here\'s how it works.',
     publishedAt: '2026-05-01',
-    category: 'Trust',
+    category: 'Food Safety',
     readTime: 8,
     excerpt: 'Traditional batch records can be altered, backdated, or lost. Blockchain-verified records create an immutable chain of custody that stands up to any FDA audit. Here\'s how it works.',
     relatedSlugs: [
@@ -256,6 +259,7 @@ export const blogPosts: BlogPost[] = [
 <p>Provarx uses the Polygon blockchain network via the Alchemy API to anchor every batch record submitted through the platform. The process is automatic — QA teams don't need to understand or interact with the blockchain directly. They submit records the same way they would in any digital system. Provarx handles the cryptographic hashing and blockchain anchoring in the background.</p>
 <p>Every record submitted through Provarx carries a blockchain transaction ID that can be independently verified on the Polygon network. When you export a record package for FDA or for litigation, the transaction IDs are included — giving the recipient the tools to independently verify every record's authenticity and timestamp without relying on Provarx's own systems.</p>
 <p>The result is a batch record infrastructure that doesn't just comply with FDA's electronic records standards — it exceeds them in a way that meaningfully reduces your regulatory and legal risk every time a record is created.</p>
+<p>To see exactly how blockchain verification fits into a full compliance workflow, visit the <a href="/product">Provarx product page</a>. For context on the broader FSMA 204 requirements that blockchain-verified records help satisfy, see <a href="/blog/fsma-204-compliance-guide-food-manufacturers">The Complete Guide to FSMA 204 Compliance</a>.</p>
     `,
   },
 ]

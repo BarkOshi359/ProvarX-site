@@ -122,6 +122,13 @@ export default function Nav() {
           </Link>
 
           <Link
+            href="/pricing"
+            className="text-[#1B2D4F] text-sm font-medium hover:text-[#00C9A7] transition-colors"
+          >
+            Pricing
+          </Link>
+
+          <Link
             href="/about"
             className="text-[#1B2D4F] text-sm font-medium hover:text-[#00C9A7] transition-colors"
           >
@@ -246,6 +253,13 @@ export default function Nav() {
               onClick={() => setMenuOpen(false)}
             >
               Why Provarx
+            </Link>
+            <Link
+              href="/pricing"
+              className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Pricing
             </Link>
             <Link
               href="/about"

@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props) {
       ...base.openGraph,
       type: 'article' as const,
       publishedTime: new Date(post.publishedAt).toISOString(),
+      modifiedTime: post.updatedAt ? new Date(post.updatedAt).toISOString() : new Date(post.publishedAt).toISOString(),
       authors: ['Clinton | Founder, Provarx'],
     },
   }
@@ -37,10 +38,10 @@ function formatDate(dateStr: string) {
 }
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
-  Education: { bg: 'bg-blue-100', text: 'text-blue-700' },
-  Pillar: { bg: 'bg-purple-100', text: 'text-purple-700' },
-  SEO: { bg: 'bg-green-100', text: 'text-green-700' },
-  Trust: { bg: 'bg-amber-100', text: 'text-amber-700' },
+  'FSMA 204': { bg: 'bg-teal-100', text: 'text-teal-700' },
+  'Traceability': { bg: 'bg-blue-100', text: 'text-blue-700' },
+  'Food Safety': { bg: 'bg-amber-100', text: 'text-amber-700' },
+  'Audit Readiness': { bg: 'bg-purple-100', text: 'text-purple-700' },
 }
 
 function ArticleSchema({ post }: { post: NonNullable<ReturnType<typeof getPostBySlug>> }) {
@@ -49,8 +50,10 @@ function ArticleSchema({ post }: { post: NonNullable<ReturnType<typeof getPostBy
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
+    keywords: post.metaTitle.split('|')[0].trim(),
+    articleSection: post.category,
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
     author: {
       '@type': 'Person',
       name: 'Clinton',
@@ -89,18 +92,29 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Header */}
       <section className="bg-[#0A2540] text-white py-16 px-6">
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${colors.bg} ${colors.text}`}>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-white/40 text-xs mb-5">
+            <Link href="/blog" className="hover:text-white/70 transition-colors">Blog</Link>
+            <span>/</span>
+            <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${colors.bg} ${colors.text}`}>
               {post.category}
             </span>
-            <span className="text-white/40 text-sm">{formatDate(post.publishedAt)}</span>
-          </div>
+          </nav>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-5">{post.title}</h1>
           <div className="flex items-center gap-5 text-white/50 text-sm">
             <span>By Clinton | Founder, Provarx</span>
             <span className="flex items-center gap-1.5">
               <Clock size={14} /> {post.readTime} min read
             </span>
+          </div>
+          <div className="flex items-center gap-3 mt-3 text-white/40 text-xs">
+            <span>Published {formatDate(post.publishedAt)}</span>
+            {post.updatedAt && (
+              <>
+                <span>·</span>
+                <span>Updated {formatDate(post.updatedAt)}</span>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -148,9 +162,32 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Was this helpful? */}
+      <section className="bg-[#F8FAFC] py-12 px-6 border-t border-gray-200">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-[#0A2540] font-bold text-base mb-6">Was this helpful?</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/tools/fsma-gap-assessment"
+              className="inline-flex items-center justify-center gap-2 bg-[#00C9A7] text-[#0A2540] font-bold px-7 py-3 rounded-lg hover:bg-[#00b396] transition-colors text-sm"
+            >
+              Score your facility&apos;s readiness <ArrowRight size={14} />
+            </Link>
+            <a
+              href="https://calendar.app.google/agEvxXjDA1SavteP6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-[#0A2540] text-[#0A2540] font-bold px-7 py-3 rounded-lg hover:bg-[#0A2540] hover:text-white transition-colors text-sm"
+            >
+              Talk to a compliance expert
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Related posts */}
       {related.length > 0 && (
-        <section className="bg-[#F8FAFC] py-16 px-6">
+        <section className="bg-white py-16 px-6">
           <div className="max-w-2xl mx-auto">
             <p className="text-[#00C9A7] text-xs uppercase tracking-widest font-semibold mb-4">Related Articles</p>
             <div className="flex flex-col gap-4">

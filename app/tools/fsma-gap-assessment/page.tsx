@@ -130,6 +130,11 @@ export default function GapAssessmentPage() {
       <div className="min-h-screen bg-[#F8FAFC] flex flex-col">
         {/* Header */}
         <div className="bg-[#0A2540] text-white py-10 px-6 text-center">
+          <nav className="flex items-center justify-center gap-2 text-white/40 text-xs mb-4">
+            <a href="/tools" className="hover:text-white/70 transition-colors">Free Tools</a>
+            <span>/</span>
+            <span className="text-white/60">FSMA 204 Gap Assessment</span>
+          </nav>
           <p className="text-[#00C9A7] text-xs uppercase tracking-widest font-semibold mb-2">Free Tool</p>
           <h1 className="text-2xl md:text-3xl font-bold mb-1">FSMA 204 Gap Assessment</h1>
           <p className="text-white/60 text-sm">Answer 10 questions to score your facility&apos;s readiness</p>

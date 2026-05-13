@@ -116,6 +116,13 @@ export default function WhyProvarxPage() {
               "Generic compliance modules — Provarx is purpose-built for food and beverage",
             ]}
           />
+          <p className="mt-6 text-sm text-gray-500">
+            See exactly what&apos;s in the plan and how we price for mid-market operations on the{' '}
+            <a href="/pricing" className="text-[#4A90D9] font-semibold hover:underline">
+              Provarx pricing page
+            </a>
+            .
+          </p>
         </div>
       </section>
 
