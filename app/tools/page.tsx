@@ -3,8 +3,8 @@ import { ArrowRight, ClipboardList, Play, Calculator, Clock } from 'lucide-react
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Free FSMA 204 Compliance Tools for Food & Beverage Manufacturers | Provarx',
-  description: 'Free FSMA 204 gap assessment, recall trace simulator, Cpk calculator, and deadline tracker — built by compliance professionals, no signup required.',
+  title: 'Free FSMA 204 Compliance Tools for Food Manufacturers | Provarx',
+  description: 'Free FSMA 204 compliance tools for food and beverage manufacturers. Gap assessment, recall trace simulator, Cpk calculator — no signup required.',
   canonical: 'https://getprovarx.com/tools',
   keywords: ['FSMA 204 tools', 'food safety compliance tools', 'free FSMA gap assessment'],
 })

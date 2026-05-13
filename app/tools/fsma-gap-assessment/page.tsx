@@ -302,16 +302,17 @@ export default function GapAssessmentPage() {
             A 30-minute call with Clinton — the person who built Provarx and has worked directly in facilities like yours.
             No slide deck. Just a real conversation about your gaps and how to close them.
           </p>
-          {/* TODO: Replace with real Calendly embed */}
-          <div className="border-2 border-dashed border-white/20 rounded-lg p-8 mb-6">
-            <p className="text-white/40 text-sm">Calendly embed goes here</p>
-          </div>
           <a
-            href="/contact"
+            href="https://calendar.app.google/agEvxXjDA1SavteP6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#00C9A7] text-[#0A2540] font-bold px-8 py-4 rounded-lg hover:bg-[#00b396] transition-colors"
           >
             Book your call <ChevronRight size={16} />
           </a>
+          <p className="mt-3 text-white/50 text-sm">
+            Opens Google Calendar — pick a time that works for you.
+          </p>
         </div>
       </div>
     </div>

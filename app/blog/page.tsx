@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { blogPosts } from '@/lib/blog-posts'
 import { Clock, ArrowRight } from 'lucide-react'
 
+// Metadata is exported from app/blog/layout.tsx (required for 'use client' pages)
+
 const CATEGORIES = ['All', 'Education', 'Pillar', 'SEO', 'Trust'] as const
 
 const categoryColors: Record<string, { bg: string; text: string }> = {

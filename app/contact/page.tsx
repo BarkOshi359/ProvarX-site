@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Talk to Us — Book a 30-Minute Compliance Call | Provarx",
+  description:
+    "Book a 30-minute call with Clinton, founder of Provarx. A direct conversation about your FSMA 204 compliance challenges — no sales deck, no pressure.",
+  canonical: "https://getprovarx.com/contact",
+});
+
 export default function ContactPage() {
   return (
     <>
@@ -28,27 +38,42 @@ export default function ContactPage() {
               Email
             </p>
             <a
-              href="mailto:Clinton@getprovarx.com"
+              href="mailto:clinton@getprovarx.com"
               className="text-[#1B2D4F] text-2xl font-bold hover:text-[#4A90D9] transition-colors"
             >
-              Clinton@getprovarx.com
+              clinton@getprovarx.com
             </a>
             <p className="text-gray-400 text-sm mt-2">
               You&apos;ll hear back from Clinton directly — not a support queue.
             </p>
           </div>
 
-          {/* Calendly Placeholder */}
-          <div className="bg-white border-2 border-dashed border-gray-300 rounded-lg p-16 text-center mb-8">
+          {/* Schedule a Call */}
+          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
             <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-3">
               Schedule a Call
             </p>
             <p className="text-[#1B2D4F] font-bold text-lg mb-2">
               Book a 30-minute call
             </p>
-            <p className="text-gray-400 text-sm">
-              Calendly embed goes here
+            <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+              A direct conversation about your facility, your product lines, and your current
+              compliance setup. No slide deck. No scripted demo.
             </p>
+            <div className="mt-6">
+              <a
+                href="https://calendar.app.google/agEvxXjDA1SavteP6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#0A2540] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#0d2f50] transition-colors"
+              >
+                Book a 30-minute call →
+              </a>
+              <p className="mt-3 text-sm text-gray-500">
+                Opens Google Calendar — pick a time that works for you.
+                You&apos;ll hear back from Clinton directly.
+              </p>
+            </div>
           </div>
 
           {/* What to expect */}
@@ -74,10 +99,10 @@ export default function ContactPage() {
           <p className="text-center text-gray-400 text-sm mt-8">
             Prefer email? Reach us directly at{" "}
             <a
-              href="mailto:Clinton@getprovarx.com"
+              href="mailto:clinton@getprovarx.com"
               className="text-[#4A90D9] hover:underline"
             >
-              Clinton@getprovarx.com
+              clinton@getprovarx.com
             </a>
           </p>
         </div>

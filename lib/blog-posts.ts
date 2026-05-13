@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Complete Guide to FSMA 204 Compliance for Mid-Market Food Manufacturers',
     metaTitle: 'FSMA 204 Compliance Guide for Mid-Market Food Manufacturers | Provarx',
     metaDescription: 'FSMA Section 204 requires food manufacturers to maintain traceability records for high-risk foods. This guide explains the rule, which facilities are affected, and how to build a compliant records system.',
-    publishedAt: '2025-10-15',
+    publishedAt: '2026-04-01',
     category: 'Pillar',
     readTime: 12,
     excerpt: 'FSMA Section 204 requires food manufacturers to maintain traceability records for high-risk foods. This guide explains what the rule requires, which facilities are affected, and how to build a compliant records system.',
@@ -102,7 +102,7 @@ export const blogPosts: BlogPost[] = [
 <p>Each gap you find in a drill is a gap you can fix before an FDA investigator finds it for you. Document the drill, document your findings, and document the corrective actions you take — that documentation itself becomes part of your compliance record.</p>
 
 <h2>Common Compliance Gaps and How to Close Them</h2>
-<p>In working with mid-market food manufacturers, certain compliance gaps appear repeatedly. The most common:</p>
+<p>Having worked directly inside regulated manufacturing facilities, certain compliance gaps appear repeatedly — and they&apos;re almost always the same ones. The most common:</p>
 <p><strong>Missing lot code linkage at transformation.</strong> Many facilities capture receiving lot codes and shipping lot codes but fail to document how incoming ingredient lots map to finished product lots. The Transforming CTE requires this linkage — without it, you cannot trace an ingredient lot to the finished product that contained it.</p>
 <p><strong>Supplier KDE gaps.</strong> FSMA 204 requires you to maintain your suppliers' traceability records, not just your own. If your suppliers aren't providing lot codes, reference document numbers, and location descriptions, your records are incomplete by definition. Supplier qualification programs must now include FSMA 204 record requirements.</p>
 <p><strong>No written food traceability plan.</strong> FDA expects to see a written plan on their first request. Facilities that haven't documented their CTE identification process, KDE capture methods, and records retention procedures have an immediately visible compliance gap.</p>
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
     title: 'What Is a KDE? Key Data Elements in FSMA 204 Traceability Explained',
     metaTitle: 'FSMA 204 Key Data Elements (KDEs) Explained | Provarx',
     metaDescription: 'FSMA 204 requires food manufacturers to capture Key Data Elements at each Critical Tracking Event. Here is exactly what FDA requires and how to capture it.',
-    publishedAt: '2025-11-03',
+    publishedAt: '2026-04-15',
     category: 'Education',
     readTime: 6,
     excerpt: 'FSMA 204 requires food manufacturers to capture Key Data Elements (KDEs) at each Critical Tracking Event. Here\'s exactly what FDA requires and how to capture it.',
@@ -189,7 +189,7 @@ export const blogPosts: BlogPost[] = [
     title: 'How Blockchain Makes Batch Records Tamper-Proof — and Why FDA Cares',
     metaTitle: 'Blockchain Batch Records for Food Manufacturing | Tamper-Proof & FDA-Compliant | Provarx',
     metaDescription: 'Traditional batch records can be altered, backdated, or lost. Blockchain-verified records create an immutable chain of custody that stands up to any FDA audit. Here\'s how it works.',
-    publishedAt: '2025-11-20',
+    publishedAt: '2026-05-01',
     category: 'Trust',
     readTime: 8,
     excerpt: 'Traditional batch records can be altered, backdated, or lost. Blockchain-verified records create an immutable chain of custody that stands up to any FDA audit. Here\'s how it works.',

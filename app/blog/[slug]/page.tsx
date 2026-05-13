@@ -16,11 +16,20 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return {}
-  return buildMetadata({
+  const base = buildMetadata({
     title: post.metaTitle,
     description: post.metaDescription,
     canonical: `https://getprovarx.com/blog/${post.slug}`,
   })
+  return {
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      type: 'article' as const,
+      publishedTime: new Date(post.publishedAt).toISOString(),
+      authors: ['Clinton | Founder, Provarx'],
+    },
+  }
 }
 
 function formatDate(dateStr: string) {
@@ -41,16 +50,22 @@ function ArticleSchema({ post }: { post: NonNullable<ReturnType<typeof getPostBy
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
     author: {
-      '@type': 'Organization',
-      name: 'Provarx Compliance Team',
-      url: 'https://getprovarx.com',
+      '@type': 'Person',
+      name: 'Clinton',
+      jobTitle: 'Founder',
+      worksFor: { '@type': 'Organization', name: 'Provarx' },
     },
     publisher: {
       '@type': 'Organization',
       name: 'Provarx',
       url: 'https://getprovarx.com',
       logo: { '@type': 'ImageObject', url: 'https://getprovarx.com/og-default.png' },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://getprovarx.com/blog/${post.slug}`,
     },
     url: `https://getprovarx.com/blog/${post.slug}`,
   }
@@ -82,7 +97,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-5">{post.title}</h1>
           <div className="flex items-center gap-5 text-white/50 text-sm">
-            <span>By Provarx Compliance Team</span>
+            <span>By Clinton | Founder, Provarx</span>
             <span className="flex items-center gap-1.5">
               <Clock size={14} /> {post.readTime} min read
             </span>

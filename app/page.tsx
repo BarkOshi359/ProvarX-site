@@ -1,4 +1,27 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "FSMA 204 Compliance Software for Food & Beverage Manufacturers | Provarx",
+  description:
+    "FSMA 204 compliance software for mid-market food and beverage manufacturers. Tamper-proof blockchain batch records, SPC process intelligence, and 24-hour recall trace.",
+  alternates: { canonical: "https://getprovarx.com" },
+  openGraph: {
+    title: "FSMA 204 Compliance Software for Food & Beverage Manufacturers | Provarx",
+    description:
+      "FSMA 204 compliance software for mid-market food and beverage manufacturers. Tamper-proof blockchain batch records, SPC process intelligence, and 24-hour recall trace.",
+    url: "https://getprovarx.com",
+    siteName: "Provarx",
+    images: [{ url: "https://getprovarx.com/og-default.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FSMA 204 Compliance Software for Food & Beverage Manufacturers | Provarx",
+    description:
+      "FSMA 204 compliance software for mid-market food and beverage manufacturers. Tamper-proof blockchain batch records, SPC process intelligence, and 24-hour recall trace.",
+    images: ["https://getprovarx.com/og-default.png"],
+  },
+};
 
 const bodyStyle = { fontSize: "16px", lineHeight: "1.75", color: "#374151" };
 const labelClass = "text-center text-[#4A90D9] text-xs uppercase font-semibold mb-4" as const;
@@ -59,9 +82,31 @@ function ClockIcon() {
   );
 }
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Provarx",
+  url: "https://getprovarx.com",
+  logo: "https://getprovarx.com/og-default.png",
+  foundingDate: "2026",
+  description:
+    "Tamper-proof compliance and process intelligence for food and beverage manufacturers navigating FSMA 204.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "clinton@getprovarx.com",
+    contactType: "sales",
+  },
+  sameAs: ["https://www.linkedin.com/company/provarx"],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+
       {/* SECTION 1 — HERO */}
       <section className="bg-[#1B2D4F] text-white py-28 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -72,12 +117,14 @@ export default function Home() {
             Provarx gives food and beverage manufacturers tamper-proof compliance records and
             real-time process intelligence — so an FDA audit is never a surprise.
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="https://calendar.app.google/agEvxXjDA1SavteP6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#4A90D9] text-white text-lg font-semibold px-10 py-4 rounded-md hover:bg-[#3a7bc4] transition-colors"
           >
-            Talk to Us →
-          </Link>
+            Book a 30-minute call →
+          </a>
           <p className="mt-6 text-xs uppercase tracking-widest text-white/40 font-medium">
             Built for FSMA 204. Designed by a Six Sigma Black Belt.
           </p>
@@ -248,27 +295,22 @@ export default function Home() {
             ))}
           </div>
 
-          {/* FDA Quote Block */}
-          <div
-            className="max-w-3xl mx-auto text-center"
-            style={{
-              background: "#FFFFFF",
-              border: "1px solid #E5E7EB",
-              borderRadius: "8px",
-              padding: "32px",
-              marginTop: "48px",
-            }}
-          >
-            <p className="text-[#4A90D9] text-xs uppercase tracking-widest font-semibold mb-5" style={{ letterSpacing: "0.1em" }}>
-              Directly from FSMA Rule 204:
-            </p>
-            <blockquote style={{ fontSize: "18px", fontStyle: "italic", color: "#1B2D4F", lineHeight: "1.75", marginBottom: "16px" }}>
-              &ldquo;Persons must provide records to FDA within 24 hours of a request during an outbreak
-              investigation or within a reasonable time in other circumstances.&rdquo;
-            </blockquote>
-            <p style={{ fontSize: "14px", color: "#6B7280" }}>
-              — FDA Food Traceability Final Rule, 21 CFR Part 1, Subpart S
-            </p>
+          {/* Founder credibility block */}
+          <div className="py-16 border-t border-gray-200 mt-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-sm font-medium text-[#4A90D9] uppercase tracking-wide mb-4">
+                Built from the inside
+              </p>
+              <blockquote className="text-xl text-[#1B2D4F] leading-relaxed mb-6" style={{ fontStyle: "normal" }}>
+                &ldquo;I built Provarx because I lived the problem. I&apos;ve stood on production floors,
+                prepped for FDA audits at 6am, and watched facilities scramble to reconstruct
+                records that should have been one click away. Every feature in this platform
+                exists because I needed it — or watched someone else need it.&rdquo;
+              </blockquote>
+              <p className="text-sm text-gray-500">
+                Clinton — Founder, Provarx · Six Sigma Black Belt (Purdue University) · OSHA 30 Certified · 10+ years regulated manufacturing
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -284,12 +326,14 @@ export default function Home() {
             food and beverage facilities. No enterprise contracts. No six-month implementations. Just
             a platform that works the way your facility works.
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="https://calendar.app.google/agEvxXjDA1SavteP6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#4A90D9] text-white text-lg font-semibold px-10 py-4 rounded-md hover:bg-[#3a7bc4] transition-colors"
           >
-            Talk to Us →
-          </Link>
+            Book a 30-minute call →
+          </a>
           <p className="mt-6 text-xs text-white/40">
             A real conversation with a real person who has stood on a production floor.
           </p>

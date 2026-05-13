@@ -4,8 +4,8 @@ import { industries } from '@/lib/industries'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'FSMA 204 Compliance Software by Industry | Provarx',
-  description: 'Purpose-built FSMA 204 compliance for meat processing, beverage manufacturing, dairy, nutraceutical, frozen foods, and co-packers. Built for how your facility actually works.',
+  title: 'FSMA 204 Compliance Software by Industry — Food & Beverage Verticals | Provarx',
+  description: 'FSMA 204 compliance software built for the specific regulations, terminology, and operational challenges of your food and beverage manufacturing vertical.',
   canonical: 'https://getprovarx.com/industries',
   keywords: ['FSMA 204 compliance software', 'food manufacturing compliance', 'food safety software by industry'],
 })

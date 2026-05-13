@@ -266,27 +266,16 @@ export default async function IndustryPage({ params }: Props) {
           <p className="text-[#00C9A7] text-xs uppercase tracking-widest font-semibold mb-4 text-center">
             Results
           </p>
-          {/* TODO: Replace with real customer quote */}
-          <div className="bg-white border border-gray-200 rounded-xl p-10 text-center mb-12">
+          <div className="bg-white border border-gray-200 rounded-xl p-10 text-center">
             <div className="w-10 h-0.5 bg-[#00C9A7] mx-auto mb-6" />
             <blockquote className="text-xl text-[#0A2540] font-medium italic leading-relaxed mb-6 max-w-2xl mx-auto">
-              &ldquo;[Company name] reduced audit prep time by 80% after switching to Provarx.
-              What used to take two days now takes 15 minutes.&rdquo;
+              &ldquo;I built Provarx because I lived the problem. I&apos;ve stood on production
+              floors, prepped for FDA audits at 6am, and watched facilities scramble to
+              reconstruct records that should have been one click away.&rdquo;
             </blockquote>
-            <p className="text-[#64748B] text-sm">— QA Director, {industry.name} facility</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { value: '24hr', label: 'Recall trace' },
-              { value: 'Zero', label: 'Disputed records' },
-              { value: '100%', label: 'Audit pass rate' },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-white border border-gray-200 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-[#00C9A7] mb-2">{stat.value}</div>
-                <div className="text-[#64748B] text-sm">{stat.label}</div>
-              </div>
-            ))}
+            <p className="text-[#64748B] text-sm">
+              Clinton — Founder, Provarx · Six Sigma Black Belt · OSHA 30 · 10+ years regulated manufacturing
+            </p>
           </div>
         </div>
       </section>

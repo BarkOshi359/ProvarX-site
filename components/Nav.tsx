@@ -115,18 +115,27 @@ export default function Nav() {
           </Link>
 
           <Link
+            href="/why-provarx"
+            className="text-[#1B2D4F] text-sm font-medium hover:text-[#00C9A7] transition-colors"
+          >
+            Why Provarx
+          </Link>
+
+          <Link
             href="/about"
             className="text-[#1B2D4F] text-sm font-medium hover:text-[#00C9A7] transition-colors"
           >
             About
           </Link>
 
-          <Link
-            href="/contact"
+          <a
+            href="https://calendar.app.google/agEvxXjDA1SavteP6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#0A2540] text-white text-sm font-medium px-5 py-2 rounded-md hover:bg-[#0d3060] transition-colors"
           >
             Talk to Us
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -232,6 +241,13 @@ export default function Nav() {
               Blog
             </Link>
             <Link
+              href="/why-provarx"
+              className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Why Provarx
+            </Link>
+            <Link
               href="/about"
               className="text-[#1B2D4F] text-base font-medium py-4 border-b border-gray-100"
               onClick={() => setMenuOpen(false)}
@@ -246,13 +262,15 @@ export default function Nav() {
               Contact
             </Link>
             <div className="py-4">
-              <Link
-                href="/contact"
+              <a
+                href="https://calendar.app.google/agEvxXjDA1SavteP6"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-[#0A2540] text-white text-base font-medium px-5 py-3 rounded-md text-center"
                 onClick={() => setMenuOpen(false)}
               >
                 Talk to Us
-              </Link>
+              </a>
             </div>
           </div>
         </div>

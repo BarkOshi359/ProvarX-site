@@ -1,3 +1,12 @@
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "How Provarx Works — Features for QA Managers, Floor Workers & Plant Managers | Provarx",
+  description:
+    "See how Provarx works for QA Managers, floor workers, and plant managers. HACCP templates, SPC control charts, mobile CCP logging, and one-click audit export.",
+  canonical: "https://getprovarx.com/product",
+});
+
 function FeatureCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-6">
@@ -144,10 +153,12 @@ export default function ProductPage() {
             compliance challenges.
           </p>
           <a
-            href="/contact"
+            href="https://calendar.app.google/agEvxXjDA1SavteP6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#4A90D9] text-white font-semibold px-10 py-4 rounded-md hover:bg-[#3a7bc4] transition-colors"
           >
-            Talk to Us →
+            Book a 30-minute call →
           </a>
         </div>
       </section>

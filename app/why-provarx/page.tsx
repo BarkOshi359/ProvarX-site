@@ -1,3 +1,12 @@
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Why Mid-Market Food Manufacturers Choose Provarx Over Paper and Enterprise Platforms",
+  description:
+    "Why paper, spreadsheets, and enterprise platforms fall short — and how Provarx gives mid-market food manufacturers compliance protection that actually fits their operation.",
+  canonical: "https://getprovarx.com/why-provarx",
+});
+
 function HighlightBox({ points }: { points: string[] }) {
   return (
     <div className="border-l-4 border-[#4A90D9] bg-white pl-6 py-5 pr-6 rounded-r-lg">
@@ -159,10 +168,12 @@ export default function WhyProvarxPage() {
             A direct conversation about your compliance challenges — no sales deck, no pressure.
           </p>
           <a
-            href="/contact"
+            href="https://calendar.app.google/agEvxXjDA1SavteP6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#4A90D9] text-white font-semibold px-10 py-4 rounded-md hover:bg-[#3a7bc4] transition-colors"
           >
-            Talk to Us →
+            Book a 30-minute call →
           </a>
         </div>
       </section>

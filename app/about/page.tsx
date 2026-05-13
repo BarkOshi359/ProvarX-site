@@ -1,4 +1,12 @@
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "About Provarx — Built by a Six Sigma Black Belt Who Lived the Problem",
+  description:
+    "Provarx was built by Clinton, a Six Sigma Black Belt with 10+ years in regulated manufacturing. Built for the facilities he knows from the inside.",
+  canonical: "https://getprovarx.com/about",
+});
 
 function TechBlock({
   title,
