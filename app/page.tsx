@@ -87,7 +87,7 @@ const orgSchema = {
   "@type": "Organization",
   name: "Provarx",
   url: "https://getprovarx.com",
-  logo: "https://getprovarx.com/og-default.png",
+  logo: "https://getprovarx.com/logo.png",
   foundingDate: "2026",
   description:
     "Tamper-proof compliance and process intelligence for food and beverage manufacturers navigating FSMA 204.",

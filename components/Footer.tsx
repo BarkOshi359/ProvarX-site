@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1B2D4F] text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Left: wordmark + tagline */}
           <div>
             <div className="text-xl font-bold tracking-widest uppercase mb-3">
@@ -15,17 +15,34 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Center: links */}
+          {/* Platform links */}
           <div className="flex flex-col gap-3">
-            <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Navigation</p>
+            <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Platform</p>
             <Link href="/product" className="text-white/70 text-sm hover:text-white transition-colors">
               Product
+            </Link>
+            <Link href="/pricing" className="text-white/70 text-sm hover:text-white transition-colors">
+              Pricing
             </Link>
             <Link href="/why-provarx" className="text-white/70 text-sm hover:text-white transition-colors">
               Why Provarx
             </Link>
             <Link href="/about" className="text-white/70 text-sm hover:text-white transition-colors">
               About
+            </Link>
+          </div>
+
+          {/* Resources links */}
+          <div className="flex flex-col gap-3">
+            <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Resources</p>
+            <Link href="/industries" className="text-white/70 text-sm hover:text-white transition-colors">
+              Industries
+            </Link>
+            <Link href="/tools" className="text-white/70 text-sm hover:text-white transition-colors">
+              Free Tools
+            </Link>
+            <Link href="/blog" className="text-white/70 text-sm hover:text-white transition-colors">
+              Blog
             </Link>
             <Link href="/contact" className="text-white/70 text-sm hover:text-white transition-colors">
               Contact

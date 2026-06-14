@@ -1,4 +1,4 @@
-import { buildMetadata } from '@/lib/seo'
+import { buildMetadata, faqPageSchema } from '@/lib/seo'
 import { CheckCircle2, XCircle } from 'lucide-react'
 
 export const metadata = buildMetadata({
@@ -57,6 +57,11 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }}
+      />
+
       {/* Hero */}
       <section className="bg-[#0A2540] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">

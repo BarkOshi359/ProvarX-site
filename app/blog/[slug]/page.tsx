@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { blogPosts, getPostBySlug, getRelatedPosts } from '@/lib/blog-posts'
-import { buildMetadata } from '@/lib/seo'
+import { buildMetadata, breadcrumbSchema } from '@/lib/seo'
 import { Clock, ArrowRight, Share2 } from 'lucide-react'
 
 interface Props {
@@ -50,6 +50,7 @@ function ArticleSchema({ post }: { post: NonNullable<ReturnType<typeof getPostBy
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
+    image: ['https://getprovarx.com/og-default.png'],
     keywords: post.metaTitle.split('|')[0].trim(),
     articleSection: post.category,
     datePublished: post.publishedAt,
@@ -64,7 +65,7 @@ function ArticleSchema({ post }: { post: NonNullable<ReturnType<typeof getPostBy
       '@type': 'Organization',
       name: 'Provarx',
       url: 'https://getprovarx.com',
-      logo: { '@type': 'ImageObject', url: 'https://getprovarx.com/og-default.png' },
+      logo: { '@type': 'ImageObject', url: 'https://getprovarx.com/logo.png' },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -88,6 +89,17 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <ArticleSchema post={post} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'Blog', path: '/blog' },
+              { name: post.title, path: `/blog/${post.slug}` },
+            ])
+          ),
+        }}
+      />
 
       {/* Header */}
       <section className="bg-[#0A2540] text-white py-16 px-6">

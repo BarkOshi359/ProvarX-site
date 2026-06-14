@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { industries, getIndustryBySlug } from '@/lib/industries'
-import { buildMetadata } from '@/lib/seo'
+import { buildMetadata, breadcrumbSchema } from '@/lib/seo'
 import CTABanner from '@/components/seo/CTABanner'
 import RelatedLinks from '@/components/seo/RelatedLinks'
 import {
@@ -119,6 +119,17 @@ export default async function IndustryPage({ params }: Props) {
   return (
     <>
       <SoftwareApplicationSchema industry={industry} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'Industries', path: '/industries' },
+              { name: industry.name, path: `/industries/${industry.slug}` },
+            ])
+          ),
+        }}
+      />
 
       {/* Section 1 — Hero */}
       <section className="bg-[#0A2540] text-white py-20 px-6">
