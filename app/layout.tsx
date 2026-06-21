@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -30,6 +31,14 @@ export default function RootLayout({
         <main className="pt-16">{children}</main>
         <Footer />
         <Analytics />
+        {/* Instantly.ai (Leadsy) visitor tracking tag */}
+        <Script
+          id="vtag-ai-js"
+          src="https://r2.leadsy.ai/tag.js"
+          strategy="afterInteractive"
+          data-pid="1tquFa1wC8YHwkcH9"
+          data-version="062024"
+        />
       </body>
     </html>
   );
