@@ -38,14 +38,10 @@ export const blogPosts: BlogPost[] = [
 <p>The rule isn't about adding paperwork for its own sake. It's FDA's response to outbreaks that took weeks to trace — weeks during which contaminated product continued to reach consumers. The regulatory goal is a maximum 24-hour trace time from any point in the supply chain.</p>
 
 <h2>Which Facilities Must Comply?</h2>
-<p>FSMA 204 applies to nearly every entity in the food supply chain that manufactures, processes, packs, or holds foods on the Food Traceability List. The compliance deadlines are tiered by facility size:</p>
-<ul>
-  <li><strong>Large businesses</strong> (annual food sales greater than $10 million, not a very small business): compliance was required by January 20, 2026.</li>
-  <li><strong>Small businesses</strong> ($1 million to $10 million in annual food sales): compliance required by July 20, 2026.</li>
-  <li><strong>Very small businesses</strong> (annual food sales below $1 million): compliance required by January 20, 2027.</li>
-</ul>
+<p>FSMA 204 applies to nearly every entity in the food supply chain that manufactures, processes, packs, or holds foods on the Food Traceability List. Unlike some FSMA rules, the Food Traceability Rule has a single, uniform compliance date that applies to all covered businesses — there are no separate, size-tiered deadlines.</p>
+<p>That compliance date was originally January 20, 2026. In 2025, FDA extended it by 30 months to <strong>July 20, 2028</strong>, and Congress separately directed FDA not to enforce the rule before that date. The operative deadline for every covered facility is now <strong>July 20, 2028</strong>.</p>
 <p>There are limited exemptions — farms with small average annual monetary value of food sold, certain fishing vessels, and food facilities that are also subject to the seafood HACCP rule in limited circumstances. But for mid-market food manufacturers with 50 to 500 employees, exemptions almost certainly do not apply.</p>
-<p>If your facility's deadline has already passed and you haven't achieved compliance, you are currently at risk of FDA enforcement action — including warning letters, injunctions, and product seizure.</p>
+<p>The extension is not a reason to wait. Building compliant, lot-level traceability takes months of process change, supplier coordination, and records testing. Facilities that start now will be ready; those that treat July 2028 as a far-off date will be reconstructing records under pressure — exactly the failure mode the rule was written to prevent.</p>
 
 <h2>What Are Critical Tracking Events (CTEs)?</h2>
 <p>The conceptual framework of FSMA 204 is built around Critical Tracking Events — the specific points in the supply chain where food products move from one entity or location to another, or where the food changes form. FDA defines seven CTEs in the rule:</p>

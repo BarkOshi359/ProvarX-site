@@ -137,7 +137,7 @@ export default function GapAssessmentPage() {
           </nav>
           <p className="text-[#00C9A7] text-xs uppercase tracking-widest font-semibold mb-2">Free Tool</p>
           <h1 className="text-2xl md:text-3xl font-bold mb-1">FSMA 204 Gap Assessment</h1>
-          <p className="text-white/60 text-sm">Answer 10 questions to score your facility&apos;s readiness</p>
+          <p className="text-white/60 text-sm">Answer 10 questions to score your facility&apos;s readiness — free, results sent to your email</p>
         </div>
 
         {/* Progress */}

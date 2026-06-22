@@ -4,7 +4,7 @@ import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
   title: 'Free FSMA 204 Compliance Tools for Food Manufacturers | Provarx',
-  description: 'Free FSMA 204 compliance tools for food and beverage manufacturers. Gap assessment, recall trace simulator, Cpk calculator — no signup required.',
+  description: 'Free FSMA 204 compliance tools for food and beverage manufacturers: gap assessment, recall trace simulator, Cpk calculator, and deadline tracker.',
   canonical: 'https://getprovarx.com/tools',
   keywords: ['FSMA 204 tools', 'food safety compliance tools', 'free FSMA gap assessment'],
 })
@@ -18,6 +18,7 @@ const tools = [
     time: '5 min',
     color: 'text-[#00C9A7]',
     bg: 'bg-[#00C9A7]/10',
+    access: 'Email for your score',
   },
   {
     name: 'Recall Trace Simulator',
@@ -27,6 +28,7 @@ const tools = [
     time: '3 min',
     color: 'text-[#F59E0B]',
     bg: 'bg-[#F59E0B]/10',
+    access: 'No signup',
   },
   {
     name: 'Cpk / Process Capability Calculator',
@@ -36,15 +38,17 @@ const tools = [
     time: '2 min',
     color: 'text-[#64748B]',
     bg: 'bg-[#64748B]/10',
+    access: 'No signup',
   },
   {
     name: 'FSMA 204 Deadline Tracker',
     href: '/tools/fsma-deadline-tracker',
-    description: 'Live countdown to your FSMA 204 compliance deadline by facility size, with a 12-item readiness checklist and downloadable implementation guide.',
+    description: 'Live countdown to the FSMA 204 compliance deadline, with a 12-item readiness checklist and a free downloadable implementation checklist.',
     icon: Clock,
     time: '2 min',
     color: 'text-[#0A2540]',
     bg: 'bg-[#0A2540]/10',
+    access: 'No signup',
   },
 ]
 
@@ -61,7 +65,7 @@ export default function ToolsIndexPage() {
             Free FSMA 204 compliance tools for food and beverage manufacturers
           </h1>
           <p className="text-white/70 text-xl font-light leading-relaxed">
-            Built by compliance professionals who&apos;ve been in your facility. No signup required.
+            Built by compliance professionals who&apos;ve been in your facility. Free to use.
           </p>
         </div>
       </section>
@@ -82,7 +86,7 @@ export default function ToolsIndexPage() {
                 <p className="text-[#64748B] text-sm leading-relaxed mb-5 flex-1">{tool.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#64748B] bg-gray-100 px-2.5 py-1 rounded-full font-medium">
-                    Free · No signup · {tool.time}
+                    Free · {tool.access} · {tool.time}
                   </span>
                   <Link
                     href={tool.href}
@@ -101,7 +105,7 @@ export default function ToolsIndexPage() {
       <section className="bg-white py-12 px-6 border-t border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[#64748B] text-sm leading-relaxed">
-            All tools are free, require no account, and are built on the same compliance methodology
+            Every tool is free and built on the same compliance methodology
             that powers Provarx. If a tool surfaces a gap in your operation,{' '}
             <Link href="/contact" className="text-[#00C9A7] font-semibold hover:underline">
               talk to us about fixing it.
