@@ -3,7 +3,7 @@ import { CheckCircle2, XCircle } from 'lucide-react'
 
 export const metadata = buildMetadata({
   title: 'Pricing — Provarx Compliance Software for Mid-Market Food Manufacturers',
-  description: 'Provarx is priced for mid-market food manufacturers — not enterprise budgets. One plan, all features, no implementation fees, no annual lock-in.',
+  description: 'Provarx pricing for food & beverage manufacturers: Starter $499/mo, Growth $999/mo, or custom Scale. Every plan includes the full platform — no feature paywalls.',
   canonical: 'https://getprovarx.com/pricing',
 })
 
@@ -50,9 +50,65 @@ const faqs = [
   },
   {
     q: 'How is pricing determined?',
-    a: 'Pricing is based on your facility size and production volume — not seat count. We price for mid-market operations, not enterprise budgets. Schedule a call and we\'ll give you an exact number for your specific facility.',
+    a: 'Pricing is based on your batch volume and number of facilities — not seat count. We price for mid-market operations, not enterprise budgets. Every plan includes the complete platform; you only pay for the volume you run.',
+  },
+  {
+    q: 'What counts as a batch?',
+    a: 'A batch is a single production run logged in Provarx — one CCP-monitored lot of product. Your plan is sized by how many batches your facility logs per day on average, so you only pay for the volume you actually run.',
+  },
+  {
+    q: 'Can I change plans as my facility grows?',
+    a: 'Yes. Move between plans at any time as your batch volume changes — there is no lock-in. Annual billing saves 17% versus month-to-month, and multi-facility operations are covered under the Scale plan.',
   },
 ]
+
+const plans = [
+  {
+    name: 'Starter',
+    price: '$499',
+    cadence: '/mo',
+    specs: ['Up to 15 batches/day', '1 facility'],
+    cta: 'Get started',
+    href: '/contact',
+    highlight: false,
+  },
+  {
+    name: 'Growth',
+    price: '$999',
+    cadence: '/mo',
+    specs: ['Up to 50 batches/day', '1 facility'],
+    cta: 'Get started',
+    href: '/contact',
+    highlight: true,
+  },
+  {
+    name: 'Scale',
+    price: 'Custom',
+    cadence: '',
+    specs: ['50+ batches/day', 'or multiple facilities'],
+    cta: 'Contact sales',
+    href: '/contact',
+    highlight: false,
+  },
+]
+
+const pricingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Provarx',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description:
+    'FSMA 204 compliance and process intelligence platform for mid-market food and beverage manufacturers. Blockchain-verified batch records, SPC analytics, and 24-hour recall trace.',
+  url: 'https://getprovarx.com/pricing',
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'USD',
+    lowPrice: '499',
+    highPrice: '999',
+    offerCount: '3',
+  },
+}
 
 export default function PricingPage() {
   return (
@@ -60,6 +116,10 @@ export default function PricingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
       />
 
       {/* Hero */}
@@ -72,56 +132,98 @@ export default function PricingPage() {
             Built for mid-market. Priced for mid-market.
           </h1>
           <p className="text-white/70 text-xl font-light max-w-2xl mx-auto leading-relaxed">
-            One plan. Every feature. No six-figure implementation. No enterprise contract.
-            Priced based on your facility size — not your seat count.
+            Every feature in every plan — no six-figure implementation, no enterprise contract.
+            Pricing scales with your batch volume and facility count, not your feature access.
           </p>
         </div>
       </section>
 
-      {/* Pricing card + What you get */}
+      {/* Pricing tiers */}
       <section className="bg-[#F8FAFC] py-24 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-
-          {/* Contact card */}
-          <div className="bg-white border border-gray-200 rounded-xl p-10 shadow-sm">
-            <p className="text-[#00C9A7] text-xs uppercase tracking-widest font-semibold mb-3">
-              One Plan
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] mb-4">
+              Simple, transparent pricing. Every feature, every plan.
+            </h2>
+            <p className="text-[#64748B] leading-relaxed">
+              Provarx doesn&apos;t lock blockchain verification, SPC analytics, or recall trace behind
+              a paywall. Every facility gets the complete platform from day one. Pricing scales with
+              your batch volume and facility count — not your feature access.
             </p>
-            <h2 className="text-3xl font-bold text-[#0A2540] mb-2">Everything included.</h2>
-            <p className="text-[#64748B] mb-8 leading-relaxed">
-              Pricing is based on your facility size and annual production volume. No per-seat fees.
-              No add-on modules. No surprises.
-            </p>
-            <a
-              href="https://calendar.app.google/agEvxXjDA1SavteP6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center bg-[#00C9A7] text-[#0A2540] font-bold px-8 py-4 rounded-md hover:bg-[#00b396] transition-colors mb-4"
-            >
-              Get your facility&apos;s price →
-            </a>
-            <a
-              href="/contact"
-              className="block text-center border border-gray-200 text-[#64748B] font-semibold px-8 py-4 rounded-md hover:border-gray-300 hover:bg-gray-50 transition-colors"
-            >
-              Ask us a question
-            </a>
-            <div className="mt-8 pt-8 border-t border-gray-100 flex flex-wrap gap-x-6 gap-y-2 text-[#64748B] text-xs font-medium">
-              {['No annual contract', 'Month-to-month', 'SOC 2 Type II', 'FDA 21 CFR Part 11'].map((s) => (
-                <span key={s} className="flex items-center gap-1.5">
-                  <span className="w-1 h-1 rounded-full bg-[#00C9A7]" />
-                  {s}
-                </span>
-              ))}
-            </div>
           </div>
 
-          {/* Feature list */}
-          <div>
-            <p className="text-[#64748B] text-sm font-semibold uppercase tracking-wide mb-5">
-              Everything in the plan
-            </p>
-            <ul className="flex flex-col gap-3">
+          {/* Tier cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative bg-white rounded-xl p-8 flex flex-col ${
+                  plan.highlight ? 'border-2 border-[#00C9A7] shadow-md' : 'border border-gray-200'
+                }`}
+              >
+                {plan.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00C9A7] text-[#0A2540] text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+                    Most popular
+                  </span>
+                )}
+                <h3 className="text-lg font-bold text-[#0A2540] mb-2">{plan.name}</h3>
+                <div className="flex items-baseline gap-1 mb-5">
+                  <span className="text-4xl font-bold text-[#0A2540]">{plan.price}</span>
+                  {plan.cadence && (
+                    <span className="text-[#64748B] text-sm font-medium">{plan.cadence}</span>
+                  )}
+                </div>
+                <ul className="flex flex-col gap-2.5 border-t border-gray-100 pt-5">
+                  {plan.specs.map((s) => (
+                    <li key={s} className="flex items-start gap-2 text-sm text-[#0A2540]">
+                      <CheckCircle2 size={15} className="text-[#00C9A7] flex-shrink-0 mt-0.5" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-[#64748B] mt-4 leading-relaxed">
+                  Complete platform · unlimited users · all 8 roles
+                </p>
+                <a
+                  href={plan.href}
+                  className={`block text-center font-bold px-6 py-3 rounded-md transition-colors mt-8 ${
+                    plan.highlight
+                      ? 'bg-[#00C9A7] text-[#0A2540] hover:bg-[#00b396]'
+                      : 'bg-[#0A2540] text-white hover:bg-[#13294B]'
+                  }`}
+                >
+                  {plan.cta} →
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Sub-note */}
+          <p className="text-center text-[#64748B] text-sm mt-10 max-w-2xl mx-auto leading-relaxed">
+            All plans include <strong className="text-[#0A2540]">unlimited users</strong>,{' '}
+            <strong className="text-[#0A2540]">all 8 roles</strong>, and the complete platform.
+            Annual billing saves <strong className="text-[#0A2540]">17%</strong>.
+          </p>
+
+          {/* Trust strip */}
+          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[#64748B] text-xs font-medium">
+            {['No lock-in', 'Month-to-month', 'SOC 2 Type II', 'FDA 21 CFR Part 11'].map((s) => (
+              <span key={s} className="flex items-center gap-1.5">
+                <span className="w-1 h-1 rounded-full bg-[#00C9A7]" />
+                {s}
+              </span>
+            ))}
+          </div>
+
+          {/* Every plan includes the complete platform */}
+          <div className="mt-16 pt-12 border-t border-gray-200">
+            <div className="text-center mb-8">
+              <p className="text-[#00C9A7] text-xs uppercase tracking-widest font-semibold mb-3">
+                Every plan includes
+              </p>
+              <h3 className="text-2xl font-bold text-[#0A2540]">The complete platform — from day one</h3>
+            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 max-w-3xl mx-auto">
               {features.map((f) => (
                 <li key={f} className="flex items-start gap-3">
                   <CheckCircle2 size={16} className="text-[#00C9A7] flex-shrink-0 mt-0.5" />

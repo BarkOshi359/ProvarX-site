@@ -74,9 +74,11 @@ function SoftwareApplicationSchema({ industry }: { industry: ReturnType<typeof g
     description: industry.metaDescription,
     url: `https://getprovarx.com/industries/${industry.slug}`,
     offers: {
-      '@type': 'Offer',
-      price: '0',
+      '@type': 'AggregateOffer',
       priceCurrency: 'USD',
+      lowPrice: '499',
+      highPrice: '999',
+      offerCount: '3',
     },
   }
   return (
