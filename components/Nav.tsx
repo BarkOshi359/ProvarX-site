@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 
 const industries = [
@@ -28,12 +28,22 @@ interface DropdownProps {
 
 function DesktopDropdown({ label, items, indexHref }: DropdownProps) {
   const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function handleEnter() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  }
+
+  function handleLeave() {
+    closeTimer.current = setTimeout(() => setOpen(false), 150);
+  }
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
     >
       <button
         className="flex items-center gap-1 text-[#1B2D4F] text-sm font-medium hover:text-[#00C9A7] transition-colors"
@@ -45,23 +55,28 @@ function DesktopDropdown({ label, items, indexHref }: DropdownProps) {
       </button>
 
       {open && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50 py-2">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block px-4 py-2.5 text-sm text-[#1B2D4F] hover:bg-[#F8FAFC] hover:text-[#00C9A7] transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <div className="border-t border-gray-100 mt-1 pt-1">
-            <Link
-              href={indexHref}
-              className="block px-4 py-2.5 text-xs font-semibold text-[#00C9A7] hover:bg-[#F8FAFC] transition-colors uppercase tracking-wider"
-            >
-              View all →
-            </Link>
+        // Absolute wrapper is flush with the button (top-full, no margin) and uses pt-2
+        // padding to create the visual offset — so the gap is part of the hover target
+        // and moving the mouse into the menu no longer closes it.
+        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 z-50">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block px-4 py-2.5 text-sm text-[#1B2D4F] hover:bg-[#F8FAFC] hover:text-[#00C9A7] transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+            <div className="border-t border-gray-100 mt-1 pt-1">
+              <Link
+                href={indexHref}
+                className="block px-4 py-2.5 text-xs font-semibold text-[#00C9A7] hover:bg-[#F8FAFC] transition-colors uppercase tracking-wider"
+              >
+                View all →
+              </Link>
+            </div>
           </div>
         </div>
       )}
