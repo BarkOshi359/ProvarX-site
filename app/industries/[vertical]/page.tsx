@@ -170,7 +170,7 @@ export default async function IndustryPage({ params }: Props) {
 
           {/* Trust signals */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/40 text-xs font-medium tracking-wide">
-            {['SOC 2 Type II', 'FDA 21 CFR Part 11', 'Blockchain-verified', 'FSMA 204 Ready'].map((s) => (
+            {['FDA 21 CFR Part 11', 'Blockchain-verified', 'FSMA 204 Ready'].map((s) => (
               <span key={s} className="flex items-center gap-1.5">
                 <span className="w-1 h-1 rounded-full bg-[#00C9A7]" />
                 {s}

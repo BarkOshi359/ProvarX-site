@@ -17,7 +17,6 @@ const features = [
   'Recall trace — full lot genealogy in seconds',
   'FSMA 204 traceability records (KDEs at every CTE)',
   'FDA 21 CFR Part 11 compliant electronic signatures',
-  'SOC 2 Type II infrastructure',
   'Offline-capable mobile logging with auto-sync',
   'Facility-level compliance score dashboard',
 ]
@@ -207,7 +206,7 @@ export default function PricingPage() {
 
           {/* Trust strip */}
           <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[#64748B] text-xs font-medium">
-            {['No lock-in', 'Month-to-month', 'SOC 2 Type II', 'FDA 21 CFR Part 11'].map((s) => (
+            {['No lock-in', 'Month-to-month', 'FDA 21 CFR Part 11'].map((s) => (
               <span key={s} className="flex items-center gap-1.5">
                 <span className="w-1 h-1 rounded-full bg-[#00C9A7]" />
                 {s}
