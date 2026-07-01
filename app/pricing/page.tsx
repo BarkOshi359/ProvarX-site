@@ -139,7 +139,7 @@ export default function PricingPage() {
 
       {/* Pricing tiers */}
       <section className="bg-[#F8FAFC] py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] mb-4">
               Simple, transparent pricing. Every feature, every plan.
@@ -152,7 +152,7 @@ export default function PricingPage() {
           </div>
 
           {/* Tier cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {plans.map((plan) => (
               <div
                 key={plan.name}
@@ -185,7 +185,7 @@ export default function PricingPage() {
                 </p>
                 <a
                   href={plan.href}
-                  className={`block text-center font-bold px-6 py-3 rounded-md transition-colors mt-8 ${
+                  className={`block text-center font-bold px-6 py-3 rounded-md transition-colors mt-auto ${
                     plan.highlight
                       ? 'bg-[#00C9A7] text-[#0A2540] hover:bg-[#00b396]'
                       : 'bg-[#0A2540] text-white hover:bg-[#13294B]'
@@ -195,6 +195,52 @@ export default function PricingPage() {
                 </a>
               </div>
             ))}
+
+            {/* Pilot card — limited-time founding-facility offer */}
+            <div className="relative bg-[#0A2540] rounded-xl p-8 flex flex-col border-2 border-[#F59E0B]">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-[#0A2540] text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+                Pilot offer
+              </span>
+              <h3 className="text-lg font-bold text-white mb-2">Pilot</h3>
+              <div className="flex items-baseline gap-2">
+                <span className="text-lg font-medium text-white/40 line-through">$999</span>
+              </div>
+              <div className="flex items-baseline gap-1 mb-5">
+                <span className="text-4xl font-bold text-[#F59E0B]">$399</span>
+                <span className="text-white/60 text-sm font-medium">/mo</span>
+              </div>
+              <ul className="flex flex-col gap-2.5 border-t border-white/10 pt-5">
+                {['Full Growth plan', 'Every feature', 'No tiers'].map((s) => (
+                  <li key={s} className="flex items-start gap-2 text-sm text-white">
+                    <CheckCircle2 size={15} className="text-[#F59E0B] flex-shrink-0 mt-0.5" />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs font-bold text-[#F59E0B] mt-4 uppercase tracking-wide">
+                Only 5 spots
+              </p>
+              <a
+                href="/contact"
+                className="block text-center font-bold px-6 py-3 rounded-md transition-colors mt-auto bg-[#F59E0B] text-[#0A2540] hover:bg-[#e0890a]"
+              >
+                Claim your pilot spot →
+              </a>
+            </div>
+          </div>
+
+          {/* Pilot banner */}
+          <div className="mt-8 bg-[#FFF7ED] border border-[#FED7AA] rounded-xl px-6 py-5 text-center">
+            <p className="text-[#92400E] text-sm leading-relaxed">
+              <strong className="font-bold">The pilot program is open.</strong> We&apos;re onboarding just
+              5 founding facilities at $399/mo — the full Growth plan, every feature, no tiers.{' '}
+              <a
+                href="/contact"
+                className="font-bold text-[#B45309] underline hover:no-underline whitespace-nowrap"
+              >
+                Claim your spot →
+              </a>
+            </p>
           </div>
 
           {/* Sub-note */}
