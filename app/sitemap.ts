@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/industries`, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/tools`, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE}/privacy`, lastModified: LAST_UPDATED, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const industryPages: MetadataRoute.Sitemap = industries.map((i) => ({

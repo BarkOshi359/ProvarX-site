@@ -64,10 +64,16 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5">
-          <p className="text-white/40 text-xs text-center">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2">
+          <p className="text-white/40 text-xs text-center sm:text-left">
             © 2026 Provarx LLC. All rights reserved. Built for food and beverage manufacturers navigating FSMA 204 compliance.
           </p>
+          <Link
+            href="/privacy"
+            className="text-white/40 text-xs hover:text-white transition-colors whitespace-nowrap"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
