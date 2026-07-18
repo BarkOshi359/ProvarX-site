@@ -158,7 +158,7 @@ export default async function IndustryPage({ params }: Props) {
               href="/contact"
               className="inline-block bg-[#00C9A7] text-[#0A2540] font-bold px-10 py-4 rounded-md hover:bg-[#00b396] transition-colors"
             >
-              Start free trial
+              Join the pilot
             </a>
             <a
               href="/contact"
@@ -300,7 +300,7 @@ export default async function IndustryPage({ params }: Props) {
       <CTABanner
         headline={`Ready to make your ${industry.name.toLowerCase()} operation audit-proof?`}
         subtext="No enterprise contracts. No six-month implementations. A platform built for the specific regulations your facility operates under — and the audits you actually face."
-        primaryCTA={{ label: 'Start free trial', href: '/contact' }}
+        primaryCTA={{ label: 'Join the pilot', href: '/contact' }}
         secondaryCTA={{ label: 'See a demo', href: '/contact' }}
       />
     </>
