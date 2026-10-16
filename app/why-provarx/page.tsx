@@ -1,9 +1,9 @@
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Why Mid-Market Food Manufacturers Choose Provarx Over Paper and Enterprise Platforms",
+  title: "Why Mid-Market Regulated Manufacturers Choose Provarx Over Paper and Enterprise Platforms",
   description:
-    "Why paper, spreadsheets, and enterprise platforms fall short — and how Provarx gives mid-market food manufacturers compliance protection that actually fits their operation.",
+    "Why paper, spreadsheets, and enterprise platforms fall short — and how Provarx gives mid-market regulated manufacturers compliance protection that actually fits their operation.",
   canonical: "https://getprovarx.com/why-provarx",
 });
 
@@ -90,7 +90,7 @@ export default function WhyProvarxPage() {
           </h2>
           <div className="flex flex-col gap-6 text-gray-600 mb-10" style={{ fontSize: "16px", lineHeight: "1.75" }}>
             <p>
-              Enterprise food safety platforms exist — and they are built for enterprise companies.
+              Enterprise compliance platforms exist — and they are built for enterprise companies.
               Six-figure implementation fees. Twelve-month onboarding timelines. Dedicated IT
               resources required for configuration and maintenance. A customer success team that
               treats your facility as a support ticket.
@@ -113,9 +113,17 @@ export default function WhyProvarxPage() {
               "Enterprise platforms require IT teams — Provarx is configured by your QA Manager",
               "Six-month implementations — Provarx is operational in days",
               "Enterprise pricing built for enterprise budgets — Provarx is priced for mid-market reality",
-              "Generic compliance modules — Provarx is purpose-built for food and beverage",
+              "Generic compliance modules — Provarx is purpose-built for your framework",
             ]}
           />
+          <p
+            className="mt-6 text-base text-[#1B2D4F] font-medium bg-[#EFF6FF] border-l-4 border-[#4A90D9] pl-5 py-4 rounded-r-lg"
+            style={{ lineHeight: "1.75" }}
+          >
+            And if you run more than one product line, the same platform adapts to each framework you
+            operate under — FSMA 204, cGMP, cannabis, or MoCRA — so a multi-product manufacturer runs
+            one system, not four separate tools.
+          </p>
           <p className="mt-6 text-sm text-gray-500">
             See exactly what&apos;s in the plan and how we price for mid-market operations on the{' '}
             <a href="/pricing" className="text-[#4A90D9] font-semibold hover:underline">
@@ -149,7 +157,7 @@ export default function WhyProvarxPage() {
               you when a process is drifting toward a violation before it crosses the line.
             </p>
             <p>
-              This is the capability that food manufacturers pay Six Sigma consultants tens of
+              This is the capability that manufacturers pay Six Sigma consultants tens of
               thousands of dollars per engagement to deliver. Provarx builds it into your daily
               compliance workflow automatically — no consultant, no engagement, no additional cost.
             </p>

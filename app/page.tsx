@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FSMA 204 Compliance Software for Food & Beverage Manufacturers | Provarx",
+  title: "Compliance & Traceability Software for Regulated Manufacturers | Provarx",
   description:
-    "FSMA 204 compliance software for mid-market food and beverage manufacturers. Tamper-proof blockchain batch records, SPC process intelligence, and 24-hour recall trace.",
+    "Tamper-proof batch records and lot traceability for regulated manufacturers — FSMA 204, cGMP 21 CFR 111, cannabis, and MoCRA. Audit-ready, recall-ready, chargeback-ready.",
   alternates: { canonical: "https://getprovarx.com" },
   openGraph: {
-    title: "FSMA 204 Compliance Software for Food & Beverage Manufacturers | Provarx",
+    title: "Compliance & Traceability Software for Regulated Manufacturers | Provarx",
     description:
-      "FSMA 204 compliance software for mid-market food and beverage manufacturers. Tamper-proof blockchain batch records, SPC process intelligence, and 24-hour recall trace.",
+      "Tamper-proof batch records and lot traceability for regulated manufacturers — FSMA 204, cGMP 21 CFR 111, cannabis, and MoCRA. Audit-ready, recall-ready, chargeback-ready.",
     url: "https://getprovarx.com",
     siteName: "Provarx",
     images: [{ url: "https://getprovarx.com/og-default.png", width: 1200, height: 630 }],
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FSMA 204 Compliance Software for Food & Beverage Manufacturers | Provarx",
+    title: "Compliance & Traceability Software for Regulated Manufacturers | Provarx",
     description:
-      "FSMA 204 compliance software for mid-market food and beverage manufacturers. Tamper-proof blockchain batch records, SPC process intelligence, and 24-hour recall trace.",
+      "Tamper-proof batch records and lot traceability for regulated manufacturers — FSMA 204, cGMP 21 CFR 111, cannabis, and MoCRA. Audit-ready, recall-ready, chargeback-ready.",
     images: ["https://getprovarx.com/og-default.png"],
   },
 };
@@ -90,7 +90,7 @@ const orgSchema = {
   logo: "https://getprovarx.com/logo.png",
   foundingDate: "2026",
   description:
-    "Tamper-proof compliance and process intelligence for food and beverage manufacturers navigating FSMA 204.",
+    "Tamper-proof batch records and lot traceability for regulated manufacturers — from FSMA 204 food safety to cGMP 21 CFR 111, cannabis, and MoCRA.",
   contactPoint: {
     "@type": "ContactPoint",
     email: "clinton@getprovarx.com",
@@ -98,6 +98,29 @@ const orgSchema = {
   },
   sameAs: ["https://www.linkedin.com/company/provarx"],
 };
+
+const servedIndustries = [
+  {
+    industry: "Food & Beverage",
+    framework: "FSMA 204",
+    body: "Traceability lot codes, Critical Tracking Events, and Key Data Elements captured from receiving through shipping — so you can produce a 24-hour recall trace when the FDA asks.",
+  },
+  {
+    industry: "Dietary Supplements & Nutraceuticals",
+    framework: "cGMP · 21 CFR 111",
+    body: "Tamper-proof batch production records, Certificate of Analysis (COA) management, and deviation and CAPA tracking aligned to 21 CFR Part 111.",
+  },
+  {
+    industry: "Cannabis & Hemp",
+    framework: "State seed-to-sale + COA",
+    body: "Batch and package records, lab COA tracking, and chain of custody that sit alongside the state seed-to-sale system you already report to. We complement Metrc or BioTrack, we don't replace them.",
+  },
+  {
+    industry: "Cosmetics",
+    framework: "MoCRA",
+    body: "Batch records and ingredient traceability to back your MoCRA facility and product obligations, so an adverse-event or recall question always has a documented answer.",
+  },
+];
 
 export default function Home() {
   return (
@@ -114,8 +137,9 @@ export default function Home() {
             Every Record. Proven. Permanent.
           </h1>
           <p className="text-xl font-light text-white/75 max-w-2xl mx-auto mb-10" style={{ lineHeight: "1.75" }}>
-            Provarx gives food and beverage manufacturers tamper-proof compliance records and
-            real-time process intelligence — so an FDA audit is never a surprise.
+            Tamper-proof batch records and lot traceability for regulated manufacturers — so an
+            audit, a recall, or a retailer chargeback is never a surprise. FSMA 204 is where we
+            lead; the same platform adapts to the framework your facility runs under.
           </p>
           <a
             href="https://calendar.app.google/agEvxXjDA1SavteP6"
@@ -126,7 +150,46 @@ export default function Home() {
             Book a 30-minute call →
           </a>
           <p className="mt-6 text-xs uppercase tracking-widest text-white/40 font-medium">
-            Built for FSMA 204. Designed by a Six Sigma Black Belt.
+            Built for regulated manufacturing. Designed by a Six Sigma Black Belt.
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION — INDUSTRIES WE SERVE */}
+      <section className="bg-[#F8FAFC] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <p className={labelClass} style={{ letterSpacing: "0.1em" }}>
+            Industries We Serve
+          </p>
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-4">
+            One platform. Every framework your facility reports under.
+          </h2>
+          <p className="text-center max-w-2xl mx-auto mb-16" style={bodyStyle}>
+            Provarx started with FSMA 204 food safety and now gives regulated manufacturers the same
+            tamper-proof batch records and lot traceability — configured to the rules you actually
+            operate under, not a generic checklist.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {servedIndustries.map((item) => (
+              <div
+                key={item.industry}
+                className="bg-white border border-gray-200 border-t-4 border-t-[#4A90D9] rounded-xl p-7 shadow-sm flex flex-col"
+              >
+                <h3 className="text-lg font-bold text-[#1B2D4F] mb-3 leading-snug">
+                  {item.industry}
+                </h3>
+                <span className="self-start inline-block text-xs font-semibold text-[#4A90D9] bg-[#EFF6FF] px-2.5 py-1 rounded-full mb-4">
+                  {item.framework}
+                </span>
+                <p className="text-sm text-[#374151] leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center mt-12 text-sm text-[#64748B]">
+            Run more than one of these?{" "}
+            <a href="/contact" className="text-[#4A90D9] font-semibold hover:underline">
+              One platform covers every framework your facility operates under →
+            </a>
           </p>
         </div>
       </section>
@@ -144,15 +207,15 @@ export default function Home() {
             {[
               {
                 title: "Your records can be altered.",
-                body: "Paper logs get backdated. Spreadsheets get edited. When an FDA investigator asks you to prove a CCP check happened at 2pm on a Tuesday three months ago, a handwritten logbook isn't enough anymore.",
+                body: "Paper logs get backdated. Spreadsheets get edited. When an auditor asks you to prove a batch record or CCP check happened at 2pm on a Tuesday three months ago, a handwritten logbook isn't enough anymore — whether that auditor is from the FDA, a state program, or your biggest retailer.",
               },
               {
                 title: "Your recalls take too long.",
-                body: "The average food recall trace takes days. During that time, contaminated product keeps moving. Every hour you spend searching binders and calling suppliers is an hour of exposure — legal, financial, and reputational.",
+                body: "The average recall trace takes days. During that time, affected product keeps moving. Every hour you spend searching binders and calling suppliers is an hour of exposure — legal, financial, and reputational. It plays out the same whether you make frozen entrées, softgels, pre-rolls, or lotion.",
               },
               {
                 title: "Your compliance data isn't working for you.",
-                body: "Logging CCP checks tells you whether you passed today. It doesn't tell you that Line 3's cook temperature has been drifting for six shifts and is two deviations from a violation. That's the data you actually need.",
+                body: "Logging checks tells you whether you passed today. It doesn't tell you that Line 3's cook temperature — or fill weight, or potency assay — has been drifting for six shifts and is two deviations from a violation. That's the data you actually need.",
               },
             ].map((card) => (
               <div
@@ -185,25 +248,25 @@ export default function Home() {
             One platform. Complete protection.
           </h2>
           <p className="text-center max-w-2xl mx-auto mb-16" style={bodyStyle}>
-            Provarx combines tamper-proof compliance records with Six Sigma process intelligence —
-            purpose-built for mid-market food and beverage manufacturers.
+            Provarx combines tamper-proof batch records with Six Sigma process intelligence —
+            purpose-built for mid-market regulated manufacturers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
                 icon: <ShieldCheckIcon />,
                 title: "Immutable Records",
-                body: "Every CCP check, SOP sign-off, and corrective action is timestamped and cryptographically sealed the moment it's submitted. Nobody changes it after the fact. Not your staff. Not us. The record is permanent.",
+                body: "Every batch record, CCP check, SOP sign-off, and corrective action is timestamped and cryptographically sealed the moment it's submitted. Nobody changes it after the fact. Not your staff. Not us. The record is permanent.",
               },
               {
                 icon: <MagnifyingGlassIcon />,
                 title: "Recall Trace in Seconds",
-                body: "Enter any ingredient lot code or product batch number. Provarx instantly surfaces every batch it touched, every shift it ran, and every distribution destination on record. What used to take days takes seconds.",
+                body: "Enter any ingredient lot code, batch number, or package ID. Provarx instantly surfaces every batch it touched, every shift it ran, and every destination on record. What used to take days takes seconds.",
               },
               {
                 icon: <ChartBarIcon />,
                 title: "Process Intelligence Built In",
-                body: "SPC control charts and Cpk scoring run automatically against your compliance data. Provarx flags process drift before it becomes a deviation — giving your QA team the signal they need before the FDA finds it first.",
+                body: "SPC control charts and Cpk scoring run automatically against your records. Provarx flags process drift before it becomes a deviation — giving your QA team the signal they need before an auditor finds it first.",
               },
             ].map((feature) => (
               <div key={feature.title} className="flex flex-col gap-5">
@@ -235,17 +298,17 @@ export default function Home() {
               {
                 step: "01",
                 title: "Configure your facility",
-                body: "Set up your product lines, build your HACCP templates, define your CCPs and acceptable ranges. Your QA Manager does this once. Takes a few hours. No IT team required.",
+                body: "Set up your product lines, build your batch-record templates, define your control points and acceptable limits. Your QA Manager does this once. Takes a few hours. No IT team required.",
               },
               {
                 step: "02",
                 title: "Your team starts logging",
-                body: "Floor workers log CCP checks on any device — phone, tablet, or desktop — in under 30 seconds. The interface is built for the production floor, not a conference room.",
+                body: "Floor workers log checks and batch records on any device — phone, tablet, or desktop — in under 30 seconds. The interface is built for the production floor, not a conference room.",
               },
               {
                 step: "03",
                 title: "Audit-ready from day one",
-                body: "Every record is immediately timestamped, digitally signed, and blockchain-verified. When an auditor walks in, your complete compliance history is one click away — formatted, organized, and legally defensible.",
+                body: "Every record is immediately timestamped, digitally signed, and blockchain-verified. When an auditor walks in — FDA, state inspector, or retail customer — your complete compliance history is one click away: formatted, organized, and defensible.",
               },
             ].map((step) => (
               <div key={step.step} className="flex flex-col gap-4">
@@ -268,14 +331,14 @@ export default function Home() {
       <section className="bg-[#F8FAFC] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1B2D4F] text-center mb-14">
-            Built on what regulators actually require.
+            Built for the regulations that matter.
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               {
                 icon: <CheckBadgeIcon />,
-                title: "FSMA 204 Aligned",
-                body: "Records structured around FDA Critical Tracking Events and Key Data Elements.",
+                title: "Built for Your Framework",
+                body: "Records structured around the tracking events, data elements, batch records, and COAs your framework requires — FSMA 204, cGMP 21 CFR 111, state cannabis rules, or MoCRA.",
               },
               {
                 icon: <CpuChipIcon />,
@@ -289,8 +352,8 @@ export default function Home() {
               },
               {
                 icon: <ClockIcon />,
-                title: "24-Hour FDA Compliance",
-                body: "Records retrievable and exportable within the FDA's required response window.",
+                title: "24-Hour Records Response",
+                body: "Records retrievable and exportable within the response window the FDA, a state program, or a retailer expects.",
               },
             ].map((signal) => (
               <div key={signal.title} className="flex flex-col gap-4">
@@ -325,11 +388,11 @@ export default function Home() {
       <section className="bg-[#1B2D4F] text-white py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
-            Ready to make your next FDA audit the easiest one you&apos;ve ever had?
+            Ready to make your next audit the easiest one you&apos;ve ever had?
           </h2>
           <p className="text-white/70 text-lg mb-10" style={{ lineHeight: "1.75" }}>
-            We work directly with QA Managers, Food Safety Directors, and Plant Owners at mid-market
-            food and beverage facilities. No enterprise contracts. No six-month implementations. Just
+            We work directly with QA Managers, compliance leads, and plant owners at mid-market
+            regulated manufacturers. No enterprise contracts. No six-month implementations. Just
             a platform that works the way your facility works.
           </p>
           <a

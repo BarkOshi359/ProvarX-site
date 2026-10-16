@@ -14,9 +14,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://getprovarx.com"),
-  title: "Provarx — Food Safety Compliance & Process Intelligence",
+  title: "Provarx — Compliance & Traceability for Regulated Manufacturers",
   description:
-    "Provarx gives food and beverage manufacturers tamper-proof compliance records and real-time process intelligence — so an FDA audit is never a surprise.",
+    "Provarx gives regulated manufacturers tamper-proof batch records and lot traceability — so an audit, a recall, or a retailer chargeback is never a surprise.",
 };
 
 export default function RootLayout({
